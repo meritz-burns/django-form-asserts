@@ -1,0 +1,3 @@
+#!/bin/sh
+
+python -m django_form_asserts.test.test_examples
