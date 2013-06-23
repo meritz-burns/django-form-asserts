@@ -9,11 +9,15 @@ test form validations.
 Installation
 ------------
 
+The easiest way is to install using pip::
+
     pip install django-form-asserts
 
 -----
 Usage
 -----
+
+Here is an example showing the custom assertions::
 
     from django_form_asserts import FormTestCase
 
@@ -47,7 +51,7 @@ Contributing
 * The test suite can be run using `setuptools`.
 * We love feature branches.
 
-Quick start:
+Quick start::
 
     $ mkvirtualenv django-form-asserts
     $ python setup.py test
