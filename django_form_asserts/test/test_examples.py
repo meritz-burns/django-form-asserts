@@ -21,6 +21,3 @@ class PotatoFormTests(FormTestCase):
 
     def test_is_bacterial_field_with_default(self):
         self.assertBooleanField("is_bacterial")
-
-if __name__ == '__main__':
-    unittest.main()

@@ -41,6 +41,3 @@ class TestFields(TestCase):
     #    field = forms.BooleanField(required=True)
     #    form = self.build_form("is_cute", field)
     #    self.runAssertion(self.assertBooleanField, form, 'is_cute', required=True)
-
-if __name__ == '__main__':
-    unittest.main()
