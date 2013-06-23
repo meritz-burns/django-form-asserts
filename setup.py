@@ -15,4 +15,7 @@ setup(
     license="BSD",
     keywords="django form testing assertions",
     url='https://github.com/meritz-burns/django-form-asserts',
+
+    tests_require=["nose", "mock"],
+    test_suite="nose.collector",
 )

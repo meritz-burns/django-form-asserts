@@ -39,6 +39,19 @@ Usage
             self.assertChoiceField("country_of_origin",
                                    choices=PotatoForm.COUNTRY_CHOICES)
 
+------------
+Contributing
+------------
+
+* Practice test-driven design.
+* The test suite can be run using `setuptools`.
+* We love feature branches.
+
+Quick start:
+
+    $ mkvirtualenv django-form-asserts
+    $ python setup.py test
+
 -------
 License
 -------
