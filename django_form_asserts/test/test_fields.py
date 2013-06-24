@@ -2,7 +2,7 @@ from django import forms
 import unittest
 from unittest import TestCase
 
-from django_form_asserts import FormTestCase
+from django_form_asserts import FormTestMixin
 
 
 class TestFields(TestCase):
@@ -16,25 +16,25 @@ class TestFields(TestCase):
         klass.fields = form.fields
         return klass
 
-    def build_test_case(self, form, valid_attrs):
+    def build_mixin(self, form, valid_attrs):
         form_class = self.build_form_class(form)
-        test_case = FormTestCase('runTest')
-        test_case.form_class = form_class
-        test_case.valid_attrs = valid_attrs
-        return test_case
+        test_mixin = FormTestMixin()
+        test_mixin.form_class = form_class
+        test_mixin.valid_attrs = valid_attrs
+        return test_mixin
 
     def test_boolean_field(self):
         field = forms.BooleanField()
         valid_attrs = {"is_cute": True}
         form = self.build_form("is_cute", field)
         form.is_cute = True
-        test_case = self.build_test_case(form, valid_attrs)
+        test_case = self.build_mixin(form, valid_attrs)
         test_case.assertBooleanField('is_cute')
         form.is_cute = False
-        test_case = self.build_test_case(form, valid_attrs)
+        test_case = self.build_mixin(form, valid_attrs)
         test_case.assertBooleanField('is_cute')
         form.is_cute = None
-        test_case = self.build_test_case(form, valid_attrs)
+        test_case = self.build_mixin(form, valid_attrs)
         test_case.assertBooleanField('is_cute')
 
     #def test_boolean_field_required(self):

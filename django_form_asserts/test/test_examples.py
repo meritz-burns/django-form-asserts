@@ -1,5 +1,5 @@
-import unittest
-from django_form_asserts import FormTestCase
+from unittest import TestCase
+from django_form_asserts import FormTestMixin
 
 from django import forms
 
@@ -9,7 +9,7 @@ class ModlyPotatoForm(forms.Form):
     is_bacterial = forms.BooleanField(required=True)
 
 
-class PotatoFormTests(FormTestCase):
+class PotatoFormTests(FormTestMixin, TestCase):
     form_class = ModlyPotatoForm
     valid_attrs = {"is_moldy": True, "is_bacterial": False}
 

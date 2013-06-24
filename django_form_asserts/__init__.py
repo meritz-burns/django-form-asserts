@@ -1,1 +1,1 @@
-from testcases import FormTestCase
+from testcases import FormTestMixin
